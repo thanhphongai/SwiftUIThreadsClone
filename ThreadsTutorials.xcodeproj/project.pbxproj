@@ -47,6 +47,8 @@
 		5265A6EC2BE7492B009FA3D8 /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265A6EB2BE7492B009FA3D8 /* CurrentUserProfileViewModel.swift */; };
 		5265A6EF2BE751E8009FA3D8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265A6EE2BE751E8009FA3D8 /* ProfileHeaderView.swift */; };
 		5265A6F12BE7547E009FA3D8 /* UserContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265A6F02BE7547E009FA3D8 /* UserContentListView.swift */; };
+		5265A6F42BE77E31009FA3D8 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265A6F32BE77E31009FA3D8 /* EditProfileViewModel.swift */; };
+		5265A6F62BE78316009FA3D8 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265A6F52BE78316009FA3D8 /* ImageUploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		5265A6EB2BE7492B009FA3D8 /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
 		5265A6EE2BE751E8009FA3D8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		5265A6F02BE7547E009FA3D8 /* UserContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListView.swift; sourceTree = "<group>"; };
+		5265A6F32BE77E31009FA3D8 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		5265A6F52BE78316009FA3D8 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5265A6DC2BE67E2F009FA3D8 /* UserService.swift */,
+				5265A6F52BE78316009FA3D8 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 		5265A6BF2BE628D9009FA3D8 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				5265A6F22BE77D66009FA3D8 /* ViewModel */,
 				5265A6C02BE628EE009FA3D8 /* View */,
 			);
 			path = EditProfile;
@@ -509,6 +515,14 @@
 				5265A6F02BE7547E009FA3D8 /* UserContentListView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5265A6F22BE77D66009FA3D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5265A6F32BE77E31009FA3D8 /* EditProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +678,8 @@
 				5265A6D32BE6420C009FA3D8 /* AuthService.swift in Sources */,
 				5265A6B32BE5E36C009FA3D8 /* ProfileView.swift in Sources */,
 				5265A6B62BE5E5DA009FA3D8 /* FeedCellView.swift in Sources */,
+				5265A6F62BE78316009FA3D8 /* ImageUploader.swift in Sources */,
+				5265A6F42BE77E31009FA3D8 /* EditProfileViewModel.swift in Sources */,
 				5265A6DB2BE67B0F009FA3D8 /* UserModel.swift in Sources */,
 				5265A69C2BE5DC8B009FA3D8 /* ThreadsButtonModifier.swift in Sources */,
 				5265A6EF2BE751E8009FA3D8 /* ProfileHeaderView.swift in Sources */,
