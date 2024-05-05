@@ -8,37 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var selectedFilter: ProfileThreadFilter = .threads
-    @Namespace var animation
-    
-    private var filterBarWidth: CGFloat {
-        let count = CGFloat(ProfileThreadFilter.allCases.count)
-        return UIScreen.main.bounds.width / count - 16
-    }
+    let user: UserModel
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading , spacing: 12) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Phong titile")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            
-                            Text("Phong sub titiel")
-                                .font(.subheadline)
-                        }
-                        
-                        Text("Bio and text")
-                            .font(.footnote)
-                        Text("2 followers")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    Spacer()
-                    CircularProfileImageView()
-                }
+                ProfileHeaderView(user: user)
                 
                 Button {
                     
@@ -53,46 +28,16 @@ struct ProfileView: View {
                 }
                 
                 // user content list view
-                VStack {
-                    HStack {
-                        ForEach(ProfileThreadFilter.allCases) { filter in
-                            VStack{
-                                Text(filter.title)
-                                    .font(.subheadline)
-                                    .fontWeight(selectedFilter == filter ? .semibold : .regular)
-                                
-                                if selectedFilter == filter {
-                                    Rectangle()
-                                        .foregroundColor(.black)
-                                        .frame(width: filterBarWidth, height: 1)
-                                        .matchedGeometryEffect(id: "item", in: animation)
-                                } else {
-                                    Rectangle()
-                                        .foregroundColor(.clear)
-                                        .frame(width: filterBarWidth, height: 1)
-                                }
-                            }
-                            .onTapGesture {
-                                withAnimation(.spring()) {
-                                    selectedFilter = filter
-                                }
-                            }
-                        }
-                    }
-                    
-                    LazyVStack{
-                        ForEach(0 ... 10, id: \.self) { thread in
-                                FeedCellView()
-                        }
-                    }
-                }
-                .padding(.vertical, 8)
+                UserContentListView()
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
     }
 }
 
-#Preview {
-    ProfileView()
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView(user: dev.user)
+    }
 }
